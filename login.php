@@ -59,7 +59,7 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" name="username" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                                placeholder="Username">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
@@ -72,7 +72,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <span> 
+                                        <span style="color: red;" class="small"> 
                                             <?php
                                                 if (isset($login_check)) {
                                                     echo $login_check;

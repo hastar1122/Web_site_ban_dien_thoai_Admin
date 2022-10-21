@@ -1,5 +1,6 @@
 <?php
 class Format{
+
     public function formatDate($date) {
         return date('F j, Y, g:i a', strtotime($date));
     }
@@ -17,6 +18,22 @@ class Format{
         $data = stripcslashes($data);
         $data = htmlspecialchars($data);
         return $data;
+    }
+
+    public function validationRegister($data) {
+        if(preg_match('([A-Za-z0-9]+)', $data)) { 
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function checkPass($pass, $repass) {
+        if (strcmp($pass, $repass) == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function title() {

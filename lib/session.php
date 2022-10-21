@@ -27,7 +27,7 @@ class Session {
 
     public static function checkSession() {
         self::init();
-        if (self::get("login") == false) {
+        if (self::get("adminlogin") == false) {
             self::destroy();
             header("Location:login.php");
         }
@@ -35,14 +35,15 @@ class Session {
 
     public static function checkLogin() {
         self::init();
-        if (self::get("userLogin") == true) {
+        if (self::get("adminlogin") == true) {
             header("Location:index.php");
         }
     }
 
     public static function destroy() {
         session_destroy();
-        header("Location:login.php");
+        //header("Location:login.php");
+        echo "<script> window.location.href='login.php'</script>";
     }
 }
 ?>

@@ -30,10 +30,15 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
+                <?php
+                    if(isset($_GET['action']) && $_GET['action'] == 'logout') {
+                        Session::destroy();
+                    }
+                ?>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.php">Logout</a>
+                    <a class="btn btn-primary" href="?action=logout">Logout</a>
                 </div>
             </div>
         </div>
