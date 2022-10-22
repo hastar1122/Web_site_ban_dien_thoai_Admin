@@ -1,7 +1,7 @@
 <?php
-    include 'lib/session.php';
-    include 'lib/database.php';
-    include 'helpers/format.php';
+    include($_SERVER['DOCUMENT_ROOT'].'/models/database.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/helpers/format.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/models/session.php');
 ?>
 <?php
     class adminregister {

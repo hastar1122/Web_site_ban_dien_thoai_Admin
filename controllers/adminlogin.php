@@ -1,8 +1,8 @@
 <?php
-    include 'lib/session.php';
+    include($_SERVER['DOCUMENT_ROOT'].'/models/database.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/helpers/format.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/models/session.php');
     Session::checkLogin();
-    include 'lib/database.php';
-    include 'helpers/format.php';
 ?>
 <?php
     class adminlogin {
@@ -39,7 +39,7 @@
                         Session::set('UserAccount', $value['UserAccount']);
                         Session::set('PassWord', $value['PassWord']);
                         Session::set('UserName', $value['UserName']);
-                        echo "<script> window.location.href='index.php'</script>";
+                        echo "<script> window.location.href='/view/index.php'</script>";
                     }
                 } else {
                     $alert = "Username and password not match";

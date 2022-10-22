@@ -29,21 +29,21 @@ class Session {
         self::init();
         if (self::get("adminlogin") == false) {
             self::destroy();
-            header("Location:login.php");
+            header("Location:/view/pages/login.php");
         }
     }
 
     public static function checkLogin() {
         self::init();
         if (self::get("adminlogin") == true) {
-            header("Location:index.php");
+            header("Location:/view/index.php");
         }
     }
 
     public static function destroy() {
         session_destroy();
         //header("Location:login.php");
-        echo "<script> window.location.href='login.php'</script>";
+        echo "<script> window.location.href='/view/pages/login.php'</script>";
     }
 }
 ?>

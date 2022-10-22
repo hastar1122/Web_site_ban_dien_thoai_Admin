@@ -1,5 +1,5 @@
 <?php
-    include './inc/header.php'
+    include($_SERVER['DOCUMENT_ROOT'].'/view/layouts/header.php');
 ?>
 
                 <!-- Begin Page Content -->
@@ -19,5 +19,5 @@
             </div>
             <!-- End of Main Content -->
 <?php
-    include './inc/footer.php'
+    include($_SERVER['DOCUMENT_ROOT'].'/view/layouts/footer.php');
 ?>
