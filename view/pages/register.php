@@ -80,6 +80,7 @@
                                 </div>
                                 <span style="color: red;" class="small"> 
                                     <?php
+                                        var_dump($register_check);
                                         if (isset($register_check)) {
                                             echo $register_check;
                                         }
