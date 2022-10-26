@@ -51,6 +51,11 @@
                     VALUES ('$username', '$password', '$name', 2)";
                 $result = $this->db->insert($query);
                 if($result) {
+                    $query_acc = "SELECT * FROM user WHERE UserAccount = '$username'";
+                    $result_acc = $this->db->select($query_acc);
+                    $value = $result_acc->fetch_assoc();
+                    Session::set('UserAccountRes', $value['UserAccount']);
+                    Session::set('PasswordRes', $value['Password']);
                     echo "<script> window.location.href='login.php'</script>";                 
                 } else {
                     $alert = "Insert fail";

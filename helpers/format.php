@@ -28,6 +28,30 @@ class Format{
         }
     }
 
+    public function validationName($data) {
+        if(preg_match('([A-Za-z]+)', $data)) { 
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function validationEmail($data) {
+        if(filter_var($data, FILTER_VALIDATE_EMAIL)) { 
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function validationNumber($data) {
+        if(preg_match('([0-9]+)', $data)) { 
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function checkPass($pass, $repass) {
         if (strcmp($pass, $repass) == 0) {
             return true;

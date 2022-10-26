@@ -1,7 +1,4 @@
-<?php
-    include($_SERVER['DOCUMENT_ROOT'].'/models/database.php');
-    include($_SERVER['DOCUMENT_ROOT'].'/helpers/format.php');
-?>
+
 <?php
     class adminchangepass {
         private $db;
@@ -41,7 +38,7 @@
                 WHERE UserAccount = '$username' ";
                 $result = $this->db->update($query);
                 if($result) {
-                    return 'Đổi mật khẩu thành công!';             
+                    return 1;             
                 } else {
                     $alert = "Update fail";
                     return $alert;

@@ -16,7 +16,7 @@
 ?>
 <!-- Nested Row within Card Body -->
 <div class="row">
-    <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+    <div class="col-lg-6 d-none d-lg-block bg-changepassword-image"></div>
     <div class="col-lg-6">
     <div class="p-5">
         <div class="text-center">
@@ -42,10 +42,19 @@
                     id="exampleInputEmail" name="renewpass" aria-describedby="emailHelp"
                     placeholder="Re new password">
             </div>
-            <span style="color: red;" class="small"> 
+            <span style="color: green;" class="small"> 
                 <?php            
                     if (isset($change_check)) {
-                        echo $change_check;
+                        if ($change_check == 1)
+                            echo 'Successfully!';
+                    }                               
+                ?>
+            </span>
+            <span style="color: red;" class="small"> 
+                <?php            
+                    if (isset($change_check)){
+                        if ($change_check != 1)
+                            echo $change_check;
                     }                               
                 ?>
             </span>
