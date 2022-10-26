@@ -46,6 +46,7 @@
                         Session::set('Address', $value['Address']);
                         Session::set('Email', $value['Email']);
                         Session::set('PhoneNumber', $value['PhoneNumber']);
+                        Session::set('Image', $value['Image']);
 
                         echo "<script> window.location.href='/view/index.php'</script>";
                     }

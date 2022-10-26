@@ -346,7 +346,7 @@
                                     ?>
                                 </span>
                                 <img class="img-profile rounded-circle"
-                                    src="../../img/undraw_profile.svg">
+                                    src="<?php echo $link = '/img/' .''. Session::get("Image");?>">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

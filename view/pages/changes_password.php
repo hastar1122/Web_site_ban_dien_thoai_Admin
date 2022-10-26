@@ -46,7 +46,7 @@
                 <?php            
                     if (isset($change_check)) {
                         if ($change_check == 1) {
-                            echo 'Successfully!';
+                            echo 'Changed Successfully!';
                         }
                     }                               
                 ?>
