@@ -1,7 +1,4 @@
-<?php
-    include($_SERVER['DOCUMENT_ROOT'].'/models/database.php');
-    include($_SERVER['DOCUMENT_ROOT'].'/helpers/format.php');
-?>
+
 <?php
     class adminchangepass {
         private $db;

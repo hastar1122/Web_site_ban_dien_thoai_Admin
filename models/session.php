@@ -36,7 +36,12 @@ class Session {
     public static function checkLogin() {
         self::init();
         if (self::get("adminlogin") == true) {
-            header("Location:/view/index.php");
+            if (self::get("checklog") == true) {
+                header("Location:/view/index.php");
+            } else {
+                self::destroy();
+                header("Location:/view/pages/login.php");
+            }   
         }
     }
 
