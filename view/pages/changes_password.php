@@ -42,10 +42,19 @@
                     id="exampleInputEmail" name="renewpass" aria-describedby="emailHelp"
                     placeholder="Re new password">
             </div>
-            <span style="color: red;" class="small"> 
+            <span style="color: green;" class="small"> 
                 <?php            
                     if (isset($change_check)) {
-                        echo $change_check;
+                        if ($change_check == 1)
+                            echo 'Đổi mật khẩu thành công !';
+                    }                               
+                ?>
+            </span>
+            <span style="color: red;" class="small"> 
+                <?php            
+                    if (isset($change_check)){
+                        if ($change_check != 1)
+                            echo $change_check;
                     }                               
                 ?>
             </span>

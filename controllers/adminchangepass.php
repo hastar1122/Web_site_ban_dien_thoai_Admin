@@ -41,7 +41,7 @@
                 WHERE UserAccount = '$username' ";
                 $result = $this->db->update($query);
                 if($result) {
-                    return 'Đổi mật khẩu thành công!';             
+                    return 1;             
                 } else {
                     $alert = "Update fail";
                     return $alert;
