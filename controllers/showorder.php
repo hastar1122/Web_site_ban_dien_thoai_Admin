@@ -12,7 +12,7 @@
         public function show_order(){
             $query = "SELECT
             o.OrderID,
-            `order`.UserID,
+            `order`.CustomerID,
             u.UserAccount,
             u.UserName,
             u.Email,
@@ -25,7 +25,7 @@
             INNER JOIN orderstatus o1
               ON `order`.OrderStatusID = o1.OrderStatusID
             INNER JOIN user u
-              ON `order`.UserID = u.UserID";
+              ON `order`.CustomerID = u.UserID";
             $result = $this->db->select($query);
             return $result;
         }
@@ -37,10 +37,10 @@
               p.ProductName,
               p.Image,
               o1.Amount,
-              o1.Price
+              o1.TotalPrice
                FROM `order` o JOIN orderdetail o1 ON o.OrderID = o1.OrderID
               JOIN orderstatus o2 ON o.OrderStatusID = o2.OrderStatusID
-              JOIN user u ON o.UserID = u.UserID
+              JOIN user u ON o.CustomerID = u.UserID
               JOIN product p ON o1.ProductID = p.ProductID WHERE o.OrderID = '$id' ";
               $result = $this->db->select($query);
               return $result;
