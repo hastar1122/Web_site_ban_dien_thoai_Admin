@@ -32,7 +32,7 @@
                 $result = $this->db->select($query);
                 if($result) {
                     $value = $result->fetch_assoc();
-                    if ($value['RoleID'] != 2) {
+                    if ($value['RoleID'] != 1) {
                         return "You are not admin";
                     } else {
                         if ($checklog == 'on') {
