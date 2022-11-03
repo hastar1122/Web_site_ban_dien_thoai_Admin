@@ -1,6 +1,8 @@
 <?php
     include($_SERVER['DOCUMENT_ROOT'].'/models/session.php');
     Session::checkSession();
+    include($_SERVER['DOCUMENT_ROOT'].'/controllers/updateprofile.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -16,14 +18,21 @@
 
     <title>SB Admin 2 - Dashboard</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template -->
     <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i
+"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- Custom styles for this template -->
     <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+
+    <!-- Custom styles for this page -->
+    <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    
 
 </head>
 
@@ -36,7 +45,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/view/index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -100,35 +109,11 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <!-- <div class="sidebar-heading">
-                Addons
-            </div> -->
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <!-- <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="pages/login.php">Login</a>
-                        <a class="collapse-item" href="pages/register.php">Register</a>
-                        <a class="collapse-item" href="/pages/forgot-password.php">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="pages/404.php">404 Page</a>
-                        <a class="collapse-item" href="pages/blank.php">Blank Page</a>
-                    </div>
-                </div>
-            </li> -->
+            
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="pages/charts.php">
+                <a class="nav-link" href="/view/pages/orders.php">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Đơn hàng</span></a>
             </li>
@@ -342,22 +327,18 @@
                                     ?>
                                 </span>
                                 <img class="img-profile rounded-circle"
-                                    src="../../img/undraw_profile.svg">
+                                    src="<?php echo $link = '/img/' .''. Session::get("Image");?>">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="/view/pages/profile.php">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
+                                <a class="dropdown-item" href="/view/pages/changes_password.php">
+                                    <i class="fas fa-solid fa-key fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Change Your Password
                                 </a>
                                 <div class="dropdown-divider"></div>
                                

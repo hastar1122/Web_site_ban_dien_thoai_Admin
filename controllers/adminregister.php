@@ -47,10 +47,13 @@
                 return $alert;
             } else {
                 $name = $lastname . ' ' . $firstname;
-                $query = "INSERT user (UserAccount, Password, UserName, RoleID)
-                    VALUES ('$username', '$password', '$name', 2)";
+                $query = "INSERT user (UserAccount, Password, UserName, Image, RoleID)
+                    VALUES ('$username', '$password', '$name', 'avt.png', 2)";
                 $result = $this->db->insert($query);
                 if($result) {
+                    $query_acc = "SELECT * FROM user WHERE UserAccount = '$username'";
+                    $result_acc = $this->db->select($query_acc);
+                    $value = $result_acc->fetch_assoc();
                     echo "<script> window.location.href='login.php'</script>";                 
                 } else {
                     $alert = "Insert fail";
